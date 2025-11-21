@@ -1,0 +1,19 @@
+R² Uplift (alias) Summary (2025-11-14 22:48:19)
+========================================================================
+실험 ID: 021 | RUN_NAME: r2_uplift_final_v3 | STEP: S0+PN1
+전략 플래그: PLATE_NORM
+
+[모델 성능 - R2]
+* E2X | Algo: XGBoost | Train R2: 0.9685 | Test R2: 0.8282 (RMSE 3.0507/6.3182)
+* X2E | Algo: XGBoost | Train R2: 0.9436 | Test R2: 0.8365 (RMSE 5.8258/6.0918)
+
+[평균 Test R2] 0.8324
+
+[Leak Audit — quick permute R² (expect ≈ 0)]
+- E2X permuted R²: -0.5487
+- X2E permuted R²: -0.8683
+========================================================================
+
+[산출물]
+- 단계별 결과 CSV: reports/csv/021_r2_uplift_final_v3_S0+PN1_steps.csv
+- 코드 스냅샷: reports/scripts/021_test.py

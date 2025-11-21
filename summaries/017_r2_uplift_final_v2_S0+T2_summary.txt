@@ -1,0 +1,19 @@
+R² Uplift (alias) Summary (2025-11-14 16:13:15)
+========================================================================
+실험 ID: 017 | RUN_NAME: r2_uplift_final_v2 | STEP: S0+T2
+전략 플래그: DELTA_TARGET
+
+[모델 성능 - R2]
+* E2X | Algo: XGBoost | Train R2: 1.0000 | Test R2: -6.6911 (RMSE 0.0007/64.4626)
+* X2E | Algo: RandomForest | Train R2: 0.9938 | Test R2: -2.4854 (RMSE 1.3982/42.1705)
+
+[평균 Test R2] -4.5882
+========================================================================
+
+[시동어 설명]
+- S0: Baseline(SelectK 120, plate-Group split, E2X=XGB/X2E=RF)
+- T2: Δ‑Target 회귀 (ŷ = y(t) + Δ̂)
+
+[산출물]
+- 단계별 결과 CSV: reports/csv/017_r2_uplift_final_v2_S0+T2_steps.csv
+- 코드 스냅샷: reports/scripts/017_test_no_op.py

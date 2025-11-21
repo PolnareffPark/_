@@ -1,0 +1,90 @@
+R² Uplift (alias) Summary (2025-11-15 15:03:41)
+========================================================================
+실험 ID: 026 | RUN_NAME: r2_grid_11_off | STEP: S0
+전략 플래그: S0 (전략 없음)
+
+[모델 성능 - R2]
+* E2X | Algo: XGBoost | Train R2: 0.9022 | Test R2: 0.0727 (RMSE 6.0864/15.4296)
+* X2E | Algo: XGBoost | Train R2: 0.6583 | Test R2: 0.1194 (RMSE 7.5481/17.9717)
+
+[평균 Test R2] 0.0960
+
+[Leak Audit — quick permute R² (expect ≈ 0)]
+- E2X permuted R²: -0.0981
+- X2E permuted R²: -0.0996
+
+[DEBUG] 실행 설정
+- PERMUTE_TARGET: 0 (seed=None)
+- ANCHOR_FROM_CROSS: 0
+- STRICT_NO_TRANSD: 0
+- LEAK_AUTOCHECK: 1
+- HARD_LEAK_GUARD: 1
+- PASS 불연속 드롭 수: 1257
+
+[LEAK-GUARD] 이름 패턴으로 제거된 열
+- _target
+
+[DEBUG] 분할 통계
+- E2X: train=  814 (plates=545), test=  203 (plates=137)
+- X2E: train=  629 (plates=474), test=  169 (plates=119)
+
+[DEBUG:E2X] 분할 전 타깃-특징 상관 Top-12 (abs)
+- warping_index_current_pass: r=0.2358
+- FM_AY_4: r=0.2236
+- FM_AW: r=0.2232
+- FM_AR: r=0.2231
+- FM_H: r=-0.2150
+- FM_AT: r=-0.2141
+- FM_R_4: r=0.1927
+- FM_Pre두께_3: r=0.1923
+- FM_AB_4: r=0.1903
+- FM_AC_4: r=0.1903
+- FM_BL: r=-0.1839
+- FM_AD_4: r=0.1789
+
+[DEBUG:E2X] (train-raw) 상관 Top-12
+- warping_index_current_pass: r=0.2465
+- FM_AT: r=-0.2328
+- FM_AY_4: r=0.2297
+- FM_AW: r=0.2296
+- FM_AR: r=0.2295
+- FM_R_4: r=0.2239
+- FM_Pre두께_3: r=0.2234
+- FM_AB_4: r=0.2211
+- FM_AC_4: r=0.2211
+- FM_H: r=-0.2061
+- FM_C: r=-0.1941
+- FM_AD_4: r=0.1888
+
+[DEBUG:X2E] 분할 전 타깃-특징 상관 Top-12 (abs)
+- FM_R_4: r=0.4421
+- FM_Pre두께_3: r=0.4412
+- FM_AB_4: r=0.4403
+- FM_AC_4: r=0.4403
+- warping_index_current_pass: r=0.4357
+- FM_V_4: r=-0.3405
+- FM_U_3: r=-0.3400
+- FM_AG_3: r=-0.3183
+- FM_BH_3: r=-0.3183
+- FM_AK_4: r=-0.3045
+- FM_BI_4: r=-0.3045
+- FM_BJ_4: r=-0.2903
+
+[DEBUG:X2E] (train-raw) 상관 Top-12
+- FM_R_4: r=0.4631
+- FM_Pre두께_3: r=0.4628
+- FM_AB_4: r=0.4621
+- FM_AC_4: r=0.4621
+- warping_index_current_pass: r=0.4487
+- FM_V_4: r=-0.3510
+- FM_U_3: r=-0.3508
+- FM_AG_3: r=-0.3423
+- FM_BH_3: r=-0.3423
+- FM_BJ_4: r=-0.3199
+- FM_AK_4: r=-0.3188
+- FM_BI_4: r=-0.3188
+========================================================================
+
+[산출물]
+- 단계별 결과 CSV: reports/csv/026_r2_grid_11_off_S0_steps.csv
+- 코드 스냅샷: reports/scripts/026_test.py

@@ -1,0 +1,22 @@
+Pass t → Pass t+1 (E→X / X→E) Cross-Transition Regression Summary
+========================================================================
+2025-11-19 15:36:21 작성
+실험 ID: 329
+
+[모델 성능 - R2]
+* E2X | Algo: SVR | Train R2: 0.3796 | Test R2: 0.1540 (RMSE 16.6062/19.7122)
+* X2E | Algo: SVR | Train R2: 0.4820 | Test R2: 0.1578 (RMSE 18.1981/24.0046)
+
+[평균 Test R2] 0.1559
+
+[Leak Audit — quick permute R² (expect ≈ 0)]
+- E2X permuted R²: -3.8913
+- X2E permuted R²: -4.9807
+
+[DEBUG] 설정/분할/선택
+- PERMUTE_TARGET=0 | USE_Y_SCALE=0 | USE_DROP_NEAR_CONST=1 | USE_DROP_CORR=1 (thr=0.995) | SELECT_MODE=union | USE_CV_KSELECT=0 | SELECT_K=30 | K_GRID=15,30,45,60
+- 새 전략 | USE_RESIDUAL_PAIR_Y=1 | USE_RIDGE_META=1 | RM_MODE=causal
+- 허용 E2X 패스: [5, 7, 9] | 허용 X2E 패스: [6, 8]
+- t+1 생성 시 삭제 수(마지막 PASS 등): 1011
+- [E2X] k_used=30 | select_mode=union
+- [X2E] k_used=30 | select_mode=union

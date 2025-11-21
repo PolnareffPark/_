@@ -1,0 +1,19 @@
+R² Uplift (alias) Summary (2025-11-13 18:07:00)
+========================================================================
+실험 ID: 011 | RUN_NAME: r2_uplift_alias_v1 | STEP: S0+R1+W2
+전략 플래그: HETERO_W, ROBUST_LOSS
+
+[모델 성능 - R2]
+* E2X | Algo: XGBoost | Train R2: -5723201.1879 | Test R2: -3761875.2018 (RMSE 43847.9895/43833.9582)
+* X2E | Algo: RandomForest | Train R2: 0.9733 | Test R2: 0.9553 (RMSE 2.0449/1.6836)
+
+[평균 Test R2] -1880937.1233
+
+[시동어 설명]
+- S0: Baseline(SelectK 120, plate-Group split, E2X=XGB/X2E=RF)
+- R1: Robust Loss (XGB pseudo‑Huber/absolute)
+- W2: Heteroscedastic Weights (쌍 Δ-분산 OOF+EB 기반 WLS)
+
+[산출물]
+- 단계별 결과 CSV: reports/011_r2_uplift_alias_v1_S0+R1+W2_steps.csv
+- 코드 스냅샷: reports/scripts/011_003_r2_uplift_suite_2.py

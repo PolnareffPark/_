@@ -1,0 +1,17 @@
+R² Uplift (alias) Summary (2025-11-13 18:53:51)
+========================================================================
+실험 ID: 012 | RUN_NAME: r2_uplift_alias_v2 | STEP: S1
+전략 플래그: STRAT_SPLIT
+
+[모델 성능 - R2]
+* E2X | Algo: XGBoost | Train R2: 1.0000 | Test R2: 0.7761 (RMSE 0.0005/8.0730)
+* X2E | Algo: RandomForest | Train R2: 0.9802 | Test R2: 0.7960 (RMSE 2.5320/9.4819)
+
+[평균 Test R2] 0.7861
+
+[시동어 설명]
+- S1: Stratified Group Split (쌍(pair) 분포 유사도 최소화)
+
+[산출물]
+- 단계별 결과 CSV: reports/012_r2_uplift_alias_v2_S1_steps.csv
+- 코드 스냅샷: reports/scripts/012_003_r2_uplift_suite.py

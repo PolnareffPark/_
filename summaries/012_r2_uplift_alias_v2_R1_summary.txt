@@ -1,0 +1,17 @@
+R² Uplift (alias) Summary (2025-11-13 18:53:51)
+========================================================================
+실험 ID: 012 | RUN_NAME: r2_uplift_alias_v2 | STEP: R1
+전략 플래그: ROBUST_LOSS
+
+[모델 성능 - R2]
+* E2X | Algo: XGBoost | Train R2: 1.0000 | Test R2: 0.6918 (RMSE 0.0026/9.3986)
+* X2E | Algo: RandomForest | Train R2: 0.9757 | Test R2: 0.8003 (RMSE 2.3867/9.8748)
+
+[평균 Test R2] 0.7461
+
+[시동어 설명]
+- R1: Robust Loss (XGB absolute)
+
+[산출물]
+- 단계별 결과 CSV: reports/012_r2_uplift_alias_v2_R1_steps.csv
+- 코드 스냅샷: reports/scripts/012_003_r2_uplift_suite.py

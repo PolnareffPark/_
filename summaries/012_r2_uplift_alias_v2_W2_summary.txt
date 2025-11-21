@@ -1,0 +1,17 @@
+R² Uplift (alias) Summary (2025-11-13 18:53:51)
+========================================================================
+실험 ID: 012 | RUN_NAME: r2_uplift_alias_v2 | STEP: W2
+전략 플래그: HETERO_W
+
+[모델 성능 - R2]
+* E2X | Algo: XGBoost | Train R2: 1.0000 | Test R2: 0.5352 (RMSE 0.0019/11.5416)
+* X2E | Algo: RandomForest | Train R2: 0.9808 | Test R2: 0.8136 (RMSE 2.1184/9.5411)
+
+[평균 Test R2] 0.6744
+
+[시동어 설명]
+- W2: Heteroscedastic Weights (쌍 Δ-분산 OOF+EB 기반 WLS)
+
+[산출물]
+- 단계별 결과 CSV: reports/012_r2_uplift_alias_v2_W2_steps.csv
+- 코드 스냅샷: reports/scripts/012_003_r2_uplift_suite.py

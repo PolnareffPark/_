@@ -1,0 +1,87 @@
+Pass t → Pass t+2 Regression Pipeline Summary
+======================================================================
+2025-11-10 17:39:56 작성됨
+실험 ID: 001
+
+[데이터]
+- Final merged: data/processed/final_merged_data_regression.csv
+- Entry raw: data/processed/final_merged_data_entry_reg.csv
+- Exit raw: data/processed/final_merged_data_exit_reg.csv
+- Entry cleaned: data/processed/entry_regression_cleaned.csv
+- Exit cleaned: data/processed/exit_regression_cleaned.csv
+- Summary file: reports/summaries/001_pass_t_plus_2_summary.txt
+- Archived script: reports/scripts/001_pass_t_plus_2_pipeline.py
+
+[모델 성능 - R2 중점]
+* Entry | Algorithm: RandomForest | Train R2: 0.6993 | Test R2: 0.2369
+  - Train RMSE: 8.8937, Test RMSE: 13.3084
+* Exit | Algorithm: XGBoost | Train R2: 0.5611 | Test R2: 0.2463
+  - Train RMSE: 10.8033, Test RMSE: 14.8512
+
+[평균 R2 비교]
+- 이번 실험 평균 Test R2: 0.2416
+- Entry 대비 Exit Test R2 차이: -0.0094
+- 현재 최고 평균 Test R2: 0.2416 (실험 ID: 001)
+  → 이번 실험이 현재 최고 기록입니다.
+
+[하이퍼파라미터]
+* Entry
+    - bootstrap: True
+    - ccp_alpha: 0.0
+    - criterion: squared_error
+    - max_depth: 29
+    - max_features: sqrt
+    - max_leaf_nodes: None
+    - max_samples: None
+    - min_impurity_decrease: 0.0
+    - min_samples_leaf: 4
+    - min_samples_split: 9
+    - min_weight_fraction_leaf: 0.0
+    - monotonic_cst: None
+    - n_estimators: 300
+    - n_jobs: 1
+    - oob_score: False
+    - random_state: 42
+    - verbose: 0
+    - warm_start: False
+* Exit
+    - objective: reg:squarederror
+    - base_score: None
+    - booster: None
+    - callbacks: None
+    - colsample_bylevel: None
+    - colsample_bynode: None
+    - colsample_bytree: 0.9904476608707068
+    - device: None
+    - early_stopping_rounds: None
+    - enable_categorical: False
+    - eval_metric: None
+    - feature_types: None
+    - feature_weights: None
+    - gamma: None
+    - grow_policy: None
+    - importance_type: None
+    - interaction_constraints: None
+    - learning_rate: 0.02267076449840604
+    - max_bin: None
+    - max_cat_threshold: None
+    - max_cat_to_onehot: None
+    - max_delta_step: None
+    - max_depth: 3
+    - max_leaves: None
+    - min_child_weight: 1.0742692586947231
+    - missing: nan
+    - monotone_constraints: None
+    - multi_strategy: None
+    - n_estimators: 200
+    - n_jobs: 1
+    - num_parallel_tree: None
+    - random_state: 42
+    - reg_alpha: 0.4404227022611322
+    - reg_lambda: 1.8610971468356226
+    - sampling_method: None
+    - scale_pos_weight: None
+    - subsample: 0.6389357165196757
+    - tree_method: hist
+    - validate_parameters: None
+    - verbosity: None

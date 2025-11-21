@@ -1,0 +1,18 @@
+R² Uplift Final Summary (2025-11-14 12:39:11)
+========================================================================
+실험 ID: 017 | RUN_NAME: r2_uplift_final_v1 | STEP: S0
+전략 플래그: S0 (전략 없음)
+
+[모델 성능 - R2]
+* E2X | Algo: XGBoost (Optuna) | Train R2: 0.6474 | Test R2: -0.1030 (RMSE 11.6602/17.7801)
+* X2E | Algo: RandomForest (Optuna) | Train R2: 0.6269 | Test R2: -0.0641 (RMSE 9.8267/22.7948)
+
+[평균 Test R2] -0.0835
+========================================================================
+
+[시동어 설명]
+- S0: Baseline(SelectK 120, plate-Group split, E2X=XGB/X2E=RF, Optuna)
+
+[산출물]
+- 단계별 결과 CSV: reports/csv/017_r2_uplift_final_v1_S0_steps.csv
+- 코드 스냅샷: reports/scripts/017_test.py

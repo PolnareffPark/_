@@ -1,0 +1,19 @@
+R² Uplift (alias) Summary (2025-11-13 18:54:16)
+========================================================================
+실험 ID: 012 | RUN_NAME: r2_uplift_alias_v2 | STEP: S0+TE2+W2
+전략 플래그: HETERO_W, PAIR_TE
+
+[모델 성능 - R2]
+* E2X | Algo: XGBoost | Train R2: 1.0000 | Test R2: 0.5001 (RMSE 0.0025/11.9703)
+* X2E | Algo: RandomForest | Train R2: 0.9813 | Test R2: 0.8157 (RMSE 2.0942/9.4853)
+
+[평균 Test R2] 0.6579
+
+[시동어 설명]
+- S0: Baseline(SelectK 120, plate-Group split, E2X=XGB/X2E=RF)
+- TE2: Pair Δ Target Encoding(OOF, EB 수축) → 특성 추가
+- W2: Heteroscedastic Weights (쌍 Δ-분산 OOF+EB 기반 WLS)
+
+[산출물]
+- 단계별 결과 CSV: reports/012_r2_uplift_alias_v2_S0+TE2+W2_steps.csv
+- 코드 스냅샷: reports/scripts/012_003_r2_uplift_suite_2.py

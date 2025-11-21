@@ -1,0 +1,14 @@
+R² Leak Audit Summary (2025-11-13 21:22:46)
+========================================================================
+실험 ID: 014 | RUN_NAME: r2_leak_audit | STEP: PERMUTE(noLAG)
+
+[모델 성능 - R2]
+* E2X | Algo: XGBoost | Train R2: 1.0000 | Test R2: 0.9065 (RMSE 0.0012/5.7701)
+* X2E | Algo: RandomForest | Train R2: 0.9946 | Test R2: 0.9367 (RMSE 1.3610/5.1783)
+
+[평균 Test R2] 0.9216
+[Strict Roll-forward R²] -0.7242
+
+[산출물]
+- 단계별 결과 CSV: reports/csv/014_r2_leak_audit_PERMUTE(noLAG)_steps.csv
+- 코드 스냅샷: reports/scripts/014_experiment.py

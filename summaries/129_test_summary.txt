@@ -1,0 +1,21 @@
+Pass t → Pass t+1 (E→X / X→E) Cross-Transition Regression Summary
+========================================================================
+2025-11-19 12:05:29 작성
+실험 ID: 129
+
+[모델 성능 - R2]
+* E2X | Algo: Lasso | Train R2: 0.3684 | Test R2: 0.0497 (RMSE 16.9188/20.8920)
+* X2E | Algo: Lasso | Train R2: 0.4289 | Test R2: 0.0583 (RMSE 20.0104/25.3835)
+
+[평균 Test R2] 0.0540
+[Strict Test‑only Rollforward R²] 0.2019
+
+[Leak Audit — quick permute R² (expect ≈ 0)]
+- E2X permuted R²: -0.2107
+- X2E permuted R²: -0.4095
+
+[DEBUG] 설정/분할
+- PERMUTE_TARGET: 0
+- USE_DELTA_TARGET=0 | USE_PAIR_TE=0 | USE_HETERO_W=0 | USE_MONO_CUR=0 | USE_RM_TRAINONLY=0
+- 허용 E2X 패스: [5, 7, 9] | 허용 X2E 패스: [6, 8]
+- t+1 생성 시 삭제 수(마지막 PASS 등): 1011

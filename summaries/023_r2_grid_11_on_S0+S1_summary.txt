@@ -1,0 +1,109 @@
+R² Uplift (alias) Summary (2025-11-15 03:59:56)
+========================================================================
+실험 ID: 023 | RUN_NAME: r2_grid_11_on | STEP: S0+S1
+전략 플래그: STRAT_SPLIT
+
+[모델 성능 - R2]
+* E2X | Algo: XGBoost | Train R2: 0.9463 | Test R2: 0.8616 (RMSE 3.4923/5.6719)
+* X2E | Algo: XGBoost | Train R2: 0.9925 | Test R2: 0.9360 (RMSE 1.5298/3.8113)
+
+[평균 Test R2] 0.8988
+
+[Leak Audit — quick permute R² (expect ≈ 0)]
+- E2X permuted R²: -0.4861
+- X2E permuted R²: -0.2489
+
+[DEBUG] 실행 설정
+- PERMUTE_TARGET: 1 (seed=42)
+- ANCHOR_FROM_CROSS: 0
+- STRICT_NO_TRANSD: 0
+- LEAK_AUTOCHECK: 1
+- PASS 불연속 드롭 수: 1257
+
+[DEBUG] 분할 통계
+- E2X: train=  814 (plates=545), test=  203 (plates=137)
+- X2E: train=  629 (plates=474), test=  169 (plates=119)
+
+[DEBUG:E2X] 분할 전 타깃-특징 상관 Top-12 (abs 기준)
+- FM_J: r=-0.0620
+- FM_AV: r=0.0506
+- FM_AU: r=0.0506
+- FM_AO: r=0.0489
+- FM_E: r=0.0478
+- FM_AL: r=0.0472
+- FM_BD: r=-0.0417
+- FM_AQ: r=0.0417
+- FM_AN: r=0.0413
+- FM_AX_4: r=0.0343
+- warping_index_current_pass: r=0.0342
+- FM_K: r=-0.0333
+
+[DEBUG:E2X] (train-raw) 상관 Top-12
+- FM_J: r=-0.0604
+- FM_AL: r=0.0537
+- FM_AA_4: r=0.0534
+- FM_AO: r=0.0526
+- FM_AV: r=0.0494
+- FM_AU: r=0.0494
+- FM_K: r=-0.0440
+- FM_Z_4: r=-0.0437
+- FM_AQ: r=0.0416
+- FM_AN: r=0.0407
+- FM_E: r=0.0371
+- FM_BF_4: r=-0.0356
+
+[DEBUG:E2X] 전→후 상관 변화량 Top-9
+- FM_K: before=-0.0333 → train=-0.0440 (Δ=-0.0107)
+- FM_E: before=0.0478 → train=0.0371 (Δ=-0.0107)
+- FM_AL: before=0.0472 → train=0.0537 (Δ=+0.0065)
+- FM_AO: before=0.0489 → train=0.0526 (Δ=+0.0037)
+- FM_J: before=-0.0620 → train=-0.0604 (Δ=+0.0016)
+- FM_AU: before=0.0506 → train=0.0494 (Δ=-0.0012)
+- FM_AV: before=0.0506 → train=0.0494 (Δ=-0.0012)
+- FM_AN: before=0.0413 → train=0.0407 (Δ=-0.0006)
+- FM_AQ: before=0.0417 → train=0.0416 (Δ=-0.0001)
+
+[DEBUG:X2E] 분할 전 타깃-특징 상관 Top-12 (abs 기준)
+- FM_BB: r=-0.1033
+- FM_BA: r=-0.1009
+- FM_BK: r=0.0925
+- FM_Z_4: r=0.0903
+- FM_AD_4: r=-0.0712
+- FM_BL: r=0.0576
+- FM_AY_4: r=-0.0531
+- FM_AW: r=-0.0530
+- FM_AR: r=-0.0530
+- FM_O_3: r=0.0507
+- FM_BP: r=-0.0463
+- FM_K: r=0.0440
+
+[DEBUG:X2E] (train-raw) 상관 Top-12
+- FM_BB: r=-0.1363
+- FM_BA: r=-0.1342
+- FM_BK: r=0.1116
+- FM_Z_4: r=0.0895
+- FM_AD_4: r=-0.0732
+- FM_AY_4: r=-0.0530
+- FM_AW: r=-0.0529
+- FM_AR: r=-0.0528
+- FM_BL: r=0.0513
+- FM_AO: r=-0.0506
+- FM_F: r=0.0488
+- FM_O_3: r=0.0461
+
+[DEBUG:X2E] 전→후 상관 변화량 Top-10
+- FM_BA: before=-0.1009 → train=-0.1342 (Δ=-0.0333)
+- FM_BB: before=-0.1033 → train=-0.1363 (Δ=-0.0330)
+- FM_BK: before=0.0925 → train=0.1116 (Δ=+0.0191)
+- FM_BL: before=0.0576 → train=0.0513 (Δ=-0.0062)
+- FM_O_3: before=0.0507 → train=0.0461 (Δ=-0.0045)
+- FM_AD_4: before=-0.0712 → train=-0.0732 (Δ=-0.0020)
+- FM_Z_4: before=0.0903 → train=0.0895 (Δ=-0.0008)
+- FM_AR: before=-0.0530 → train=-0.0528 (Δ=+0.0002)
+- FM_AW: before=-0.0530 → train=-0.0529 (Δ=+0.0001)
+- FM_AY_4: before=-0.0531 → train=-0.0530 (Δ=+0.0001)
+========================================================================
+
+[산출물]
+- 단계별 결과 CSV: reports/csv/023_r2_grid_11_on_S0+S1_steps.csv
+- 코드 스냅샷: reports/scripts/023_test_no_op.py

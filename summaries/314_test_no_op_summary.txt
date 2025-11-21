@@ -1,0 +1,21 @@
+Pass t → Pass t+1 (E→X / X→E) Cross-Transition Regression Summary
+========================================================================
+2025-11-19 15:29:37 작성
+실험 ID: 314
+
+[데이터 산출물]
+- Final merged(t+1): data/processed/final_merged_data_regression_tplus1.csv
+- E2X raw/clean: data/processed/e2x_raw_tplus1.csv, data/processed/e2x_cleaned_tplus1.csv
+- X2E raw/clean: data/processed/x2e_raw_tplus1.csv, data/processed/x2e_cleaned_tplus1.csv
+- All featured: data/processed/all_featured_tplus1.csv
+- Archived script: reports/scripts/314_test_no_op.py
+
+[모델 성능 - R2]
+* E2X | Algo: SVM | Train R2: 0.2997 | Test R2: 0.2016 (RMSE 13.5874/15.1270)
+* X2E | Algo: SVM | Train R2: 0.3426 | Test R2: 0.1863 (RMSE 16.7316/19.9331)
+
+[평균 Test R2] 0.1940
+
+[Δ-분석 E2X] std_max/min=1.775 | Kruskal p=1.2802811918176154e-74 | Levene p=4.2400122217108586e-17
+
+[Δ-분석 X2E] std_max/min=2.181 | Kruskal p=2.3047681616595218e-09 | Levene p=1.504725101636689e-10

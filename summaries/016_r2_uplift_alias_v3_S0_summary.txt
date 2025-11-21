@@ -1,0 +1,19 @@
+R² Uplift (alias) Summary (2025-11-14 11:10:06)
+========================================================================
+실험 ID: 016 | RUN_NAME: r2_uplift_alias_v3 | STEP: S0
+전략 플래그: S0 (전략 없음)
+
+[모델 성능 - R2]
+* E2X | Algo: XGBoost | Train R2: 1.0000 | Test R2: -0.4523 (RMSE 0.0021/20.4024)
+* X2E | Algo: RandomForest | Train R2: 0.8756 | Test R2: -0.3368 (RMSE 5.6756/25.5493)
+
+[평균 Test R2] -0.3946
+[Strict Roll-forward R²] -0.3053
+========================================================================
+
+[시동어 설명]
+- S0: Baseline(SelectK 120, plate-Group split, E2X=XGB/X2E=RF)
+
+[산출물]
+- 단계별 결과 CSV: reports/csv/016_r2_uplift_alias_v3_S0_steps.csv
+- 코드 스냅샷: reports/scripts/016_003_r2_uplift_suite.py

@@ -1,0 +1,26 @@
+Pass t → Pass t+1 (E→X / X→E) Cross-Transition Regression Summary
+========================================================================
+2025-11-21 15:09:52 작성
+실험 ID: 345
+
+[데이터 산출물]
+- Final merged(t+1): data/processed/final_merged_data_regression_tplus1.csv
+- E2X raw/clean: data/processed/e2x_raw_tplus1.csv, data/processed/e2x_cleaned_tplus1.csv
+- X2E raw/clean: data/processed/x2e_raw_tplus1.csv, data/processed/x2e_cleaned_tplus1.csv
+- All featured: data/processed/all_featured_tplus1.csv
+- Rollforward preds: data/processed/rollforward_predictions_tplus1_cross.csv
+- Archived script: reports/scripts/345_118_test_no_op.py
+
+[모델 성능 - R2]
+* E2X | Algo: SVM | Train R2: 0.4715 | Test R2: 0.1667 (RMSE 14.3141/18.2532)
+* X2E | Algo: SVM | Train R2: 0.2857 | Test R2: 0.0771 (RMSE 14.7148/17.1985)
+
+[평균 Test R2] 0.1219
+[롤포워드 R2(전체 판, t→t+1)] 0.2052
+
+[Δ-분석 E2X] std_max/min=1.773 | Kruskal p=2.8934931577388565e-49 | Levene p=9.369851559792746e-10
+
+[Δ-분석 X2E] std_max/min=4.350 | Kruskal p=0.002675872926828839 | Levene p=5.757521067172358e-07
+
+USE_LABEL_CLEAN  = _env_on("USE_LABEL_CLEAN", "1")   # (A) 타깃/샘플 정제: 기본 ON
+USE_PASS_EXPERT  = _env_on("USE_PASS_EXPERT", "0")   # (C) pass별 expert SVR: 기본 ON

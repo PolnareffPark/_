@@ -1,0 +1,19 @@
+R² Uplift (alias) Summary (2025-11-14 15:40:26)
+========================================================================
+실험 ID: 017 | RUN_NAME: r2_uplift_final_v2 | STEP: S0+L1
+전략 플래그: SEQ_LAG
+
+[모델 성능 - R2]
+* E2X | Algo: XGBoost | Train R2: 1.0000 | Test R2: 0.5324 (RMSE 0.0005/11.5767)
+* X2E | Algo: RandomForest | Train R2: 0.9757 | Test R2: 0.8003 (RMSE 2.3867/9.8748)
+
+[평균 Test R2] 0.6664
+========================================================================
+
+[시동어 설명]
+- S0: Baseline(SelectK 120, plate-Group split, E2X=XGB/X2E=RF)
+- L1: Sequence lags/momentum/rolling-std (plate-wise)
+
+[산출물]
+- 단계별 결과 CSV: reports/csv/017_r2_uplift_final_v2_S0+L1_steps.csv
+- 코드 스냅샷: reports/scripts/017_test_no_op.py

@@ -1,0 +1,11 @@
+Pass t → Pass t+1 Cross-Transition Summary
+========================================================================
+2025-11-20 18:51:14  | ID: 339
+RUN_NAME=test | ANCHOR_TAG=default_anchor
+Flags: DT=0 TE=0 W=0 MONO=0 RM=0
+
+[R2]
+* E2X | Algo: XGBoost | Train R2: 1.0000 | Test R2: 0.2236 (RMSE 0.0094/14.1188)
+* X2E | Algo: XGBoost | Train R2: 1.0000 | Test R2: 0.1978 (RMSE 0.0040/17.1526)
+
+[Average Test R2] 0.2107

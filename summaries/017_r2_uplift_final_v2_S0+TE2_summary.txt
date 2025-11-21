@@ -1,0 +1,19 @@
+R² Uplift (alias) Summary (2025-11-14 15:59:07)
+========================================================================
+실험 ID: 017 | RUN_NAME: r2_uplift_final_v2 | STEP: S0+TE2
+전략 플래그: PAIR_TE
+
+[모델 성능 - R2]
+* E2X | Algo: XGBoost | Train R2: 1.0000 | Test R2: 0.9276 (RMSE 0.0008/4.5544)
+* X2E | Algo: RandomForest | Train R2: 0.9862 | Test R2: 0.8921 (RMSE 1.8903/7.2590)
+
+[평균 Test R2] 0.9099
+========================================================================
+
+[시동어 설명]
+- S0: Baseline(SelectK 120, plate-Group split, E2X=XGB/X2E=RF)
+- TE2: Pair Δ Target Encoding (OOF, EB 수축) → 특성 추가
+
+[산출물]
+- 단계별 결과 CSV: reports/csv/017_r2_uplift_final_v2_S0+TE2_steps.csv
+- 코드 스냅샷: reports/scripts/017_test_no_op.py

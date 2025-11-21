@@ -1,0 +1,61 @@
+Pass K RM/FM → Pass K Thickness Regression (t→t) (118_revised_2.py)
+========================================================================
+2025-11-21 17:47:01 작성
+실험 ID: 349
+
+[모델 설명]
+- Pass K (K ∈ [5, 6, 7, 8, 9])의 RM, FM 데이터
+- → Pass K의 날판두께(warping_index) 예측
+- 알고리즘: SVM (RBF kernel)
+- 예측 방식: t → t (동일 시점 예측)
+- 단일 모델로 모든 pass 예측
+
+[데이터 산출물]
+- Allowed passes data: data/processed/allowed_passes_data.csv
+- Featured data: data/processed/allowed_passes_featured.csv
+- Model: models/revised2_svm_model.pkl
+
+[전체 모델 성능]
+* Train R2: 0.3425 | RMSE: 16.6646
+* Test R2:  0.2224 | RMSE: 16.1547
+* Train samples: 1306
+* Test samples:  318
+
+[Pass별 Test 성능]
+* Pass 5: R2=0.0179, RMSE=12.3139 (n=81)
+* Pass 6: R2=0.2028, RMSE=14.6138 (n=112)
+* Pass 7: R2=-0.1769, RMSE=22.6155 (n=41)
+* Pass 8: R2=0.3236, RMSE=17.3433 (n=80)
+* Pass 9: R2=-0.0319, RMSE=20.9465 (n=4)
+
+[Feature Selection]
+* 선택된 특징 수: 120
+* 선택된 특징 예시 (첫 15개):
+  - FM_A
+  - FM_D
+  - FM_H
+  - FM_I
+  - FM_K
+  - FM_O_3
+  - FM_P_4
+  - FM_AA_4
+  - FM_AH_3
+  - FM_AI_4
+  - FM_AJ_4
+  - FM_AL
+  - FM_AN
+  - FM_AO
+  - FM_AQ
+  - ... 외 105개
+
+[데이터 누수 방지]
+- Train/Test는 plate 단위로 분할 (GroupShuffleSplit)
+- 모든 통계량(중앙값, feature selection, scaling)은 train-only로 계산
+- 타깃 정보(warping_index_current_pass)는 특징에서 완전 제외
+- 동일 plate의 데이터가 train/test에 섞이지 않도록 보장
+
+[기존 코드와의 차이점]
+- 기존: t → t+1 예측 (연속된 두 pass 사용)
+- 현재: t → t 예측 (단일 pass의 RM/FM으로 같은 pass의 날판두께 예측)
+- 시간적 전이 없이 동일 시점의 특징으로 타깃 예측
+- Pass 5, 6, 7, 8, 9만 사용하여 학습

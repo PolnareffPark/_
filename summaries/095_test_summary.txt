@@ -1,0 +1,15 @@
+Pass t → Pass t+1 (E→X / X→E) Cross-Transition Regression Summary
+========================================================================
+2025-11-18 19:08:31 작성
+실험 ID: 095
+
+[모델 성능 - R2]
+* E2X | Algo: XGBoost | Train R2: 0.9999 | Test R2: 0.2468 (RMSE 0.1655/14.6930)
+* X2E | Algo: XGBoost | Train R2: 0.9999 | Test R2: 0.2636 (RMSE 0.2423/18.9632)
+
+[평균 Test R2] 0.2552
+[Strict Test‑only Rollforward R²] 0.3329926775907358
+
+[DEBUG] 설정/분할
+- PERMUTE_TARGET: 0
+- USE_DELTA_TARGET=0 | USE_PAIR_TE=0 | USE_HETERO_W=0 | USE_MONO_CUR=0 | USE_RM_TRAINONLY=0

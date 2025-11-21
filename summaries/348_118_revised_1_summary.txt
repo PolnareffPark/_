@@ -1,0 +1,35 @@
+Pass t + Pass t+1 → Pass t+1 Thickness Regression (118_revised_1.py)
+========================================================================
+2025-11-21 17:46:21 작성
+실험 ID: 348
+
+[모델 설명]
+Pass t와 Pass t+1의 정보를 함께 사용하여 Pass t+1의 날판두께 예측
+알고리즘: SVM (RBF kernel)
+
+[모델 1: E2X (Entry → Exit)]
+- 전이: 5+6→6, 7+8→8, 9+10→10
+- Train R2: 0.4046 | RMSE: 15.7245
+- Test R2:  0.1098 | RMSE: 18.8653
+- Train samples: 280, Test samples: 70
+
+[모델 2: X2E (Exit → Entry)]
+- 전이: 6+7→7, 8+9→9
+- Train R2: 0.2135 | RMSE: 16.7128
+- Test R2:  -0.0344 | RMSE: 18.2076
+- Train samples: 139, Test samples: 35
+
+[평균 Test R2] 0.0377
+
+[데이터 산출물]
+- Transition pairs: data/processed/transition_pairs_raw.csv
+- E2X featured: data/processed/e2x_transition_featured.csv
+- X2E featured: data/processed/x2e_transition_featured.csv
+- E2X model: models/revised1_e2x_svm_model.pkl
+- X2E model: models/revised1_x2e_svm_model.pkl
+
+[데이터 누수 방지]
+- Train/Test는 plate 단위로 분할 (GroupShuffleSplit)
+- 모든 통계량(중앙값, feature selection, scaling)은 train-only로 계산
+- Pass 연속성 검증 (t+1이 t보다 정확히 1 큰 경우만)
+- Pass t+1의 날판두께는 타깃으로만 사용, 특징에서 제외

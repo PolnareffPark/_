@@ -1,0 +1,11 @@
+Pass t → Pass t+1 Cross-Transition Summary
+========================================================================
+2025-11-18 11:07:11  | ID: 084
+RUN_NAME=pass_t_plus_1_cross | ANCHOR_TAG=algogrid_20251118_110711
+Flags: DT=0 TE=0 W=0 MONO=0 RM=0
+
+[R2]
+* E2X | Algo: XGBoost | Train R2: 1.0000 | Test R2: 0.9222 (RMSE 0.0009/4.4697)
+* X2E | Algo: XGBoost | Train R2: 1.0000 | Test R2: 0.9063 (RMSE 0.0005/5.8620)
+
+[Average Test R2] 0.9142

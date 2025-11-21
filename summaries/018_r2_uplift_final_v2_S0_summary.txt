@@ -1,0 +1,18 @@
+R² Uplift (alias) Summary (2025-11-14 18:28:48)
+========================================================================
+실험 ID: 018 | RUN_NAME: r2_uplift_final_v2 | STEP: S0
+전략 플래그: S0 (전략 없음)
+
+[모델 성능 - R2]
+* E2X | Algo: XGBoost | Train R2: 1.0000 | Test R2: -0.0333 (RMSE 0.0030/17.2096)
+* X2E | Algo: RandomForest | Train R2: 0.8695 | Test R2: -0.1196 (RMSE 6.2242/23.3816)
+
+[평균 Test R2] -0.0765
+========================================================================
+
+[시동어 설명]
+- S0: Baseline(SelectK 120, plate-Group split, E2X=XGB/X2E=RF)
+
+[산출물]
+- 단계별 결과 CSV: reports/csv/018_r2_uplift_final_v2_S0_steps.csv
+- 코드 스냅샷: reports/scripts/018_test_no_op.py

@@ -1,0 +1,35 @@
+Pass t → Pass t+1 (E→X / X→E) Cross-Transition Regression Summary
+========================================================================
+2025-11-15 23:56:44 작성
+실험 ID: 054
+
+[데이터 산출물]
+- Final merged(t+1): data/processed/final_merged_data_regression_tplus1.csv
+- E2X raw: data/processed/e2x_raw_tplus1.csv
+- X2E raw: data/processed/x2e_raw_tplus1.csv
+- Rollforward preds: data/processed/rollforward_predictions_tplus1_cross.csv
+- Archived script: reports/scripts/054_experiment.py
+
+[모델 성능 - R2]
+* E2X | Algo: RandomForest | Train R2: 0.3355 | Test R2: -0.0698 (RMSE 14.9835/20.1871)
+* X2E | Algo: RandomForest | Train R2: 0.3914 | Test R2: -0.0035 (RMSE 14.3805/20.5194)
+
+[평균 Test R2] -0.0367
+[롤포워드 R2(전체 판, t→t+1)] -0.0688
+
+[실행 설정/플래그]
+- PERMUTE_TARGET: 1
+- LEAK_AUTOCHECK: 1
+- USE_DELTA_TARGET: 0 | USE_PAIR_TE: 0 | USE_HETERO_W: 0 | USE_MONO_CUR: 0 | USE_RM_TRAINONLY: 0
+
+[Δ-분석 E2X] std_max/min=11.246 | Kruskal p=1.34336332775501e-44 | Levene p=0.07684278842663751
+  - |Δ| 상위 3쌍:
+    · 1→2: n=709, mean=-25.031, std=23.520, median=-27.000
+    · 3→4: n=346, mean=-14.702, std=21.664, median=-18.000
+    · 11→12: n=2, mean=6.000, std=2.828, median=6.000
+
+[Δ-분석 X2E] std_max/min=1.368 | Kruskal p=5.804577105472104e-09 | Levene p=0.21236060349370536
+  - |Δ| 상위 3쌍:
+    · 10→11: n=3, mean=-15.000, std=19.079, median=-13.000
+    · 6→7: n=345, mean=8.226, std=25.018, median=8.000
+    · 4→5: n=547, mean=6.845, std=21.434, median=5.000
